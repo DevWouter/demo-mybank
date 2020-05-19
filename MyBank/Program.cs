@@ -10,6 +10,8 @@ namespace MyBank
             myAccount.Balance = 0;
             myAccount.Deposit(500);
 
+            ((SavingsAccount)myAccount).ApplyIntrest();
+
             var moneyReceived = myAccount.Withdraw(700);
             Console.WriteLine("Withdrawn: " + moneyReceived);
 
