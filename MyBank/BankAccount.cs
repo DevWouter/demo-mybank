@@ -31,7 +31,7 @@ namespace MyBank
         {
             if (amount > Balance)
             {
-                throw new Exception("You are overdrafting your savings account");
+                amount = Balance;
             }
 
             return base.Withdraw(amount);
