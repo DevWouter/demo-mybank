@@ -36,5 +36,10 @@ namespace MyBank
 
             return base.Withdraw(amount);
         }
+
+        public void ApplyIntrest()
+        {
+            Balance *= 2;
+        }
     }
 }
