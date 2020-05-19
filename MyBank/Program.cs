@@ -8,17 +8,18 @@ namespace MyBank
         static void Main(string[] args)
         {
             var listOfAccounts = new List<BankAccount>();
+            listOfAccounts.Add(new BankAccount());
+            listOfAccounts.Add(new SavingsAccount());
 
-            BankAccount myAccount = new SavingsAccount();
-            myAccount.Balance = 0;
-            myAccount.Deposit(500);
+            foreach (var account in listOfAccounts)
+            {
+                account.Deposit(500);
+                (account as SavingsAccount)?.ApplyIntrest();
+                account.Withdraw(700);
 
-            (myAccount as SavingsAccount)?.ApplyIntrest();
+                Console.WriteLine(account);
+            }
 
-            var moneyReceived = myAccount.Withdraw(700);
-            Console.WriteLine("Withdrawn: " + moneyReceived);
-
-            Console.WriteLine(myAccount);
             // Console.ReadLine();  
         }
     }
