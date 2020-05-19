@@ -6,7 +6,7 @@ namespace MyBank
     {
         static void Main(string[] args)
         {
-            var myAccount = new SavingsAccount();
+            BankAccount myAccount = new SavingsAccount();
             myAccount.Balance = 0;
             myAccount.Deposit(500);
             myAccount.Withdraw(200);
